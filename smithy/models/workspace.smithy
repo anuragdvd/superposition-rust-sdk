@@ -148,16 +148,6 @@ operation UpdateWorkspace {
 @readonly
 @http(method: "GET", uri: "/workspaces")
 operation ListWorkspace {
-    input :=  for Workspace with [CreateWorkspaceMixin]{
-        @httpQuery("page")
-        page: Long
-
-        @httpQuery("count")
-        count: Long
-
-        @httpQuery("all")
-        all: Boolean
-    }
-
+    input :=  with [PaginationParams, CreateWorkspaceMixin] {}
     output : WorkspaceListResponse
 }

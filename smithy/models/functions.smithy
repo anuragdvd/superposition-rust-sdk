@@ -116,20 +116,8 @@ structure FunctionResponse for Function{
 
 }
 
-structure FunctionListResponse for Function{
-
-    @required
-    @notProperty
-    total_pages: Long
-
-    @required
-    @notProperty
-    total_items: Long
-
-    @required
-    @notProperty
-    data: FunctionResponse
-    
+list FunctionListResponse {
+    member: FunctionResponse
 }
 
 
@@ -164,21 +152,10 @@ operation GetFunction {
 @readonly
 @http(method: "GET", uri: "/function")
 operation ListFunction {
-    input :=  with [WorkspaceMixin] {
-        @httpQuery("page")
-        @notProperty
-        page: Long
-
-        @httpQuery("count")
-        @notProperty
-        count: Long
-
-        @httpQuery("all")
-        @notProperty
-        all: Boolean
+    input :=  with [PaginationParams, WorkspaceMixin] {}
+    output:= with [PaginatedResponse] {
+        data: FunctionListResponse
     }
-
-    output: FunctionListResponse
 
 }
 

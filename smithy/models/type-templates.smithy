@@ -88,20 +88,6 @@ list TypeTemplatesList {
     member: TypeTemplatesResponse
 }
 
-structure TypeTemplatesListResponse for TypeTemplates{
-
-    @required
-    total_pages: Long
-
-    @required
-    total_items: Long
-
-    @required
-    data: TypeTemplatesList
-    
-}
-
-
 
 @httpError(404)
 @error("client")
@@ -119,18 +105,10 @@ operation CreateTypeTemplates {
 @readonly
 @http(method: "GET", uri: "/types")
 operation GetTypeTemplatesList {
-    input := for TypeTemplates with [WorkspaceMixin]{
-        @httpQuery("page")
-        page: Long
-
-        @httpQuery("count")
-        count: Long
-
-        @httpQuery("all")
-        all: Boolean
+    input := with [PaginationParams, WorkspaceMixin] {}
+    output:= with [PaginatedResponse] {
+        data: TypeTemplatesList
     }
-
-    output: TypeTemplatesListResponse
 
 }
 

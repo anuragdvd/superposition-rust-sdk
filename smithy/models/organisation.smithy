@@ -113,19 +113,6 @@ list OrganisationList {
     member: OrganisationResponse
 }
 
-structure OrganisationListResponse for Organisation{
-
-    @required
-    total_pages: Long
-
-    @required
-    total_items: Long
-
-    @required
-    data: OrganisationList
-    
-}
-
 
 @httpError(404)
 @error("client")
@@ -170,16 +157,8 @@ operation UpdateOrganisation {
 @readonly
 @http(method: "GET", uri: "/superposition/organisations")
 operation ListOrganisation {
-    input :=  for Organisation {
-        @httpQuery("page")
-        page: Long
-
-        @httpQuery("count")
-        count: Long
-
-        @httpQuery("all")
-        all: Boolean
+    input :=  with [PaginationParams] {}
+    output := with [PaginatedResponse] {
+        data: OrganisationList
     }
-
-    output : OrganisationListResponse
 }
