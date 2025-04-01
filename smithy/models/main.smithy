@@ -16,6 +16,11 @@ service Superposition {
         Context
         Config
         AuditLog
+        Function
+        Organisation
+        Experiments
+        TypeTemplates
+        Workspace
     ]
     errors: [
         InternalServerError
@@ -42,6 +47,15 @@ structure WorkspaceMixin {
     @default("juspay")
     org_id: String
 }
+
+@mixin
+structure CreateWorkspaceMixin {
+    @required
+    @httpHeader("x-org-id")
+    @default("juspay")
+    org_id: String
+}
+
 
 @mixin
 structure PaginatedResponse {
