@@ -28,7 +28,7 @@ Method | HTTP request | Description
 [**get_experiment**](DefaultApi.md#get_experiment) | **GET** /experiments/{id} | 
 [**get_function**](DefaultApi.md#get_function) | **GET** /function/{function_name} | 
 [**get_organisation**](DefaultApi.md#get_organisation) | **GET** /superposition/organisations/{id} | 
-[**get_resolved_config**](DefaultApi.md#get_resolved_config) | **POST** /config/resolved | 
+[**get_resolved_config**](DefaultApi.md#get_resolved_config) | **POST** /config/resolve | 
 [**get_type_templates_list**](DefaultApi.md#get_type_templates_list) | **GET** /types | 
 [**list_audit_logs**](DefaultApi.md#list_audit_logs) | **GET** /audit | 
 [**list_contexts**](DefaultApi.md#list_contexts) | **GET** /context/list | 

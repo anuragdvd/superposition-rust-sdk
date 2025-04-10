@@ -32,7 +32,7 @@ resource Organisation {
 enum OrgStatus {
     Active = "Active",
     Inactive = "Inactive",
-    PendingKyb = "PendingKyb"
+    PendingKyb = "PENDING_KYB"
 }
 
 structure CreateOrganisationRequest for Organisation {
@@ -80,7 +80,7 @@ structure OrganisationResponse for Organisation {
 
     @required
     $name
- 
+
     $country_code
 
     $contact_email
@@ -92,7 +92,7 @@ structure OrganisationResponse for Organisation {
 
     @required
     $admin_email
-    
+
     @required
     $status
 
@@ -100,7 +100,7 @@ structure OrganisationResponse for Organisation {
 
     @required
     $created_at
-    
+
     @required
     $updated_at
 

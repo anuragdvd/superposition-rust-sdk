@@ -120,12 +120,7 @@ where
                             .tenant_configs
                             .get(&workspace_id)
                             .cloned()
-                            .ok_or_else(|| {
-                                error::ErrorInternalServerError(format!(
-                                    "tenant config not found for {}",
-                                    workspace_id
-                                ))
-                            })?;
+                            .unwrap_or_default();
                         let schema = format!("{org_id}_{workspace_id}");
                         (SchemaName(schema), tenant_config)
                     },

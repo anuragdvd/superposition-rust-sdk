@@ -50,7 +50,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**get_experiment**](docs/DefaultApi.md#get_experiment) | **GET** /experiments/{id} | 
 *DefaultApi* | [**get_function**](docs/DefaultApi.md#get_function) | **GET** /function/{function_name} | 
 *DefaultApi* | [**get_organisation**](docs/DefaultApi.md#get_organisation) | **GET** /superposition/organisations/{id} | 
-*DefaultApi* | [**get_resolved_config**](docs/DefaultApi.md#get_resolved_config) | **POST** /config/resolved | 
+*DefaultApi* | [**get_resolved_config**](docs/DefaultApi.md#get_resolved_config) | **POST** /config/resolve | 
 *DefaultApi* | [**get_type_templates_list**](docs/DefaultApi.md#get_type_templates_list) | **GET** /types | 
 *DefaultApi* | [**list_audit_logs**](docs/DefaultApi.md#list_audit_logs) | **GET** /audit | 
 *DefaultApi* | [**list_contexts**](docs/DefaultApi.md#list_contexts) | **GET** /context/list | 
