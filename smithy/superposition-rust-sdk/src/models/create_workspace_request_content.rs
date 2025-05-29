@@ -19,14 +19,17 @@ pub struct CreateWorkspaceRequestContent {
     pub workspace_name: String,
     #[serde(rename = "workspace_status", skip_serializing_if = "Option::is_none")]
     pub workspace_status: Option<models::WorkspaceStatus>,
+    #[serde(rename = "workspace_strict_mode")]
+    pub workspace_strict_mode: bool, 
 }
 
 impl CreateWorkspaceRequestContent {
-    pub fn new(workspace_admin_email: String, workspace_name: String) -> CreateWorkspaceRequestContent {
+    pub fn new(workspace_admin_email: String, workspace_name: String, workspace_strict_mode: bool) -> CreateWorkspaceRequestContent {
         CreateWorkspaceRequestContent {
             workspace_admin_email,
             workspace_name,
             workspace_status: None,
+            workspace_strict_mode
         }
     }
 }
