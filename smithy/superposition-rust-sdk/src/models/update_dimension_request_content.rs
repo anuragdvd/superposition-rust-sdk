@@ -21,6 +21,8 @@ pub struct UpdateDimensionRequestContent {
     pub description: Option<String>,
     #[serde(rename = "change_reason")]
     pub change_reason: String,
+    #[serde(rename = "position", skip_serializing_if = "Option::is_none")]
+    pub position: Option<i32>,   
 }
 
 impl UpdateDimensionRequestContent {
@@ -30,6 +32,7 @@ impl UpdateDimensionRequestContent {
             function_name: None,
             description: None,
             change_reason,
+            position: None
         }
     }
 }
