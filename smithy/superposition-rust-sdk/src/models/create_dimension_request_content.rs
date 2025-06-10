@@ -28,7 +28,7 @@ pub struct CreateDimensionRequestContent {
 }
 
 impl CreateDimensionRequestContent {
-    pub fn new(dimension: String, position: f64, schema: Option<serde_json::Value>, description: String, change_reason: String) -> CreateDimensionRequestContent {
+    pub fn new(dimension: String, position: i32, schema: serde_json::Value, description: String, change_reason: String) -> CreateDimensionRequestContent {
         CreateDimensionRequestContent {
             dimension,
             position,
