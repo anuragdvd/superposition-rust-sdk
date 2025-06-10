@@ -16,7 +16,7 @@ pub struct UpdateDimensionResponseContent {
     #[serde(rename = "dimension")]
     pub dimension: String,
     #[serde(rename = "position")]
-    pub position: f64,
+    pub position: i32,
     #[serde(rename = "schema", deserialize_with = "Option::deserialize")]
     pub schema: Option<serde_json::Value>,
     #[serde(rename = "function_name", skip_serializing_if = "Option::is_none")]
@@ -38,7 +38,7 @@ pub struct UpdateDimensionResponseContent {
 }
 
 impl UpdateDimensionResponseContent {
-    pub fn new(dimension: String, position: f64, schema: Option<serde_json::Value>, description: String, change_reason: String, last_modified_at: String, last_modified_by: String, created_at: String, created_by: String) -> UpdateDimensionResponseContent {
+    pub fn new(dimension: String, position: i32, schema: Option<serde_json::Value>, description: String, change_reason: String, last_modified_at: String, last_modified_by: String, created_at: String, created_by: String) -> UpdateDimensionResponseContent {
         UpdateDimensionResponseContent {
             dimension,
             position,
