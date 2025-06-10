@@ -16,9 +16,9 @@ pub struct CreateDimensionRequestContent {
     #[serde(rename = "dimension")]
     pub dimension: String,
     #[serde(rename = "position")]
-    pub position: f64,
+    pub position: i32,
     #[serde(rename = "schema", deserialize_with = "Option::deserialize")]
-    pub schema: Option<serde_json::Value>,
+    pub schema: serde_json::Value,
     #[serde(rename = "function_name", skip_serializing_if = "Option::is_none")]
     pub function_name: Option<String>,
     #[serde(rename = "description")]
