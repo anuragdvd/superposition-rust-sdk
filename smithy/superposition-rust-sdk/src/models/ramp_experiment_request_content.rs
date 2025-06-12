@@ -16,11 +16,11 @@ pub struct RampExperimentRequestContent {
     #[serde(rename = "change_reason")]
     pub change_reason: String,
     #[serde(rename = "traffic_percentage")]
-    pub traffic_percentage: f64,
+    pub traffic_percentage: u8,
 }
 
 impl RampExperimentRequestContent {
-    pub fn new(change_reason: String, traffic_percentage: f64) -> RampExperimentRequestContent {
+    pub fn new(change_reason: String, traffic_percentage: u8) -> RampExperimentRequestContent {
         RampExperimentRequestContent {
             change_reason,
             traffic_percentage,
